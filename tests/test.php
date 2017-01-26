@@ -86,13 +86,22 @@ class Test extends Testcase {
 		);
 	}
 
-	public function testRight() {
+	public function testRightSinceTheWest() {
 		$rover = new Rover (0, 0, 'W');
 		$rover->right();
 		$this->assertEquals(
 			[0, 0, 'N'],
 			$rover->getPosition()
 			);
+	}
+
+	public function testRightSinceTheNorth() {
+		$rover = new Rover (0, 0, 'N');
+		$rover->right();
+		$this->assertEquals(
+			[0, 0, 'E'],
+			$rover->getPosition()
+		);
 	}
 
 	public function testRoverMovesForwardTwiceAndTurnOnTheRight() {
