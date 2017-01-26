@@ -19,7 +19,6 @@
         $this->y,
         $this->orientation
         ];
-
     }
 
     public function forward() {
@@ -36,7 +35,6 @@
             [$this->x = $this->x + 1,
             $this->y = $this->y];
         }
-        
     }
 
     public function backward() {
@@ -67,6 +65,16 @@
         }
     }
 
-
+    public function left() {
+        if ($this->orientation === 'N') {
+            $this->orientation = 'W';
+        } elseif ($this->orientation === 'W') {
+            $this->orientation = 'S';
+        } elseif ($this->orientation === 'S') {
+            $this->orientation = 'E';
+        } elseif ($this->orientation === 'E') {
+            $this->orientation = 'N';
+        }
+    }
 }
  

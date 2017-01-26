@@ -169,5 +169,19 @@ class Test extends Testcase {
 			);
 	}
 
+	public function testRoverMovesForwardRightOnceBackwardTwiceAndleftTwice() {
+		$rover = new Rover(0, 0, 'N');
+		$rover->forward();
+		$rover->right();
+		$rover->backward();
+		$rover->backward();
+		$rover->left();
+		$rover->left();
+		$this->assertEquals(
+			[-2, 1, 'W'],
+			$rover->getPosition()
+		);
+	}
+
 	
 }
