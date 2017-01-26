@@ -149,6 +149,15 @@ class Test extends Testcase {
 		);
 	}
 
+	public function testLeftSinceTheEast() {
+		$rover = new Rover(0, 0, 'E');
+		$rover->left();
+		$this->assertEquals(
+			[0, 0, 'N'],
+			$rover->getPosition()
+		);
+	}
+
 	public function testRoverMovesForwardTwiceAndTurnOnTheRight() {
 		$rover = new Rover (0, 0, 'N');
 		$rover->forward();
