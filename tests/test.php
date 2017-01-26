@@ -31,6 +31,24 @@ class Test extends Testcase {
 			$rover->getPosition()
 			);
 	}
+
+	public function testForwardToEast(){
+		$rover = new Rover(0, 0, 'E');
+		$rover->forward();
+		$this->assertEquals(
+            [1, 0, 'E'],
+            $rover->getPosition()
+			);
+	}
+
+	public function testForwardToSouth(){
+		$rover = new Rover(0, 0, 'S');
+		$rover->forward();
+		$this->assertEquals(
+				[0, -1, 'S'],
+				$rover->getPosition()
+			);
+	}
 	
 	public function testBackward() {
 		$rover = new Rover(0, 0,'E');
