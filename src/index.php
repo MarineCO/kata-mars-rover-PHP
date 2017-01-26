@@ -24,34 +24,34 @@
 
     public function forward() {
         if($this->orientation === 'N' ){
-            [$this->x = $this->x +1,
-            $this->y = $this->y];
+            [$this->x = $this->x,
+            $this->y = $this->y + 1 ];
         }elseif($this->orientation === 'S'){
             [$this->x = $this->x,
-            $this->y = $this->y -1];
+            $this->y = $this->y -1 ];
         }elseif($this->orientation === 'W'){
             [$this->x = $this->x -1,
             $this->y = $this->y];
         }elseif($this->orientation === 'E'){
-            [$this->x = $this->x,
-            $this->y = $this->y +1];
+            [$this->x = $this->x + 1,
+            $this->y = $this->y];
         }
         
     }
 
     public function backward() {
         if($this->orientation === 'N'){
-            [$this->x = $this->x -1,
-             $this->y = $this->y];
+            [$this->x = $this->x,
+             $this->y = $this->y - 1];
         }elseif($this->orientation === 'S'){
             [$this->x = $this->x,
-             $this->y = $this->y +1];
+             $this->y = $this->y + 1];
         }elseif($this->orientation === 'W'){
-            [$this->x = $this->x +1,
+            [$this->x = $this->x + 1,
              $this->y = $this->y];
         }elseif($this->orientation === 'E'){
-            [$this->x = $this->x,
-             $this->y = $this->y -1];
+            [$this->x = $this->x - 1,
+             $this->y = $this->y];
         }
     }
 

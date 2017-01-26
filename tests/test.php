@@ -40,4 +40,15 @@ class Test extends Testcase {
 			$rover->getPosition()
 		);
 	}
+
+	public function testRoverMovesForwardTwiceAndTurnOnTheRight() {
+		$rover = new Rover (0, 0, 'N');
+		$rover->forward();
+		$rover->forward();
+		$rover->right();
+		$this->assertEquals( 
+			[0, 2, 'E'],
+			$rover->getPosition()
+		);
+	}
 }
