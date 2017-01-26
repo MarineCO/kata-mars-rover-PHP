@@ -50,7 +50,7 @@ class Test extends Testcase {
 			);
 	}
 	
-	public function testBackwardToNorth() {
+	public function testBackwardSinceTheNorth() {
 		$rover = new Rover(0, 0,'N');
 		$rover->backward();
 		$this->assertEquals(
@@ -59,7 +59,7 @@ class Test extends Testcase {
 			);
 	}
 
-	public function testBackwardToEast() {
+	public function testBackwardSinceTheEast() {
 		$rover = new Rover(0, 0, 'E');
 		$rover->backward();
 		$this->assertEquals(
@@ -68,7 +68,7 @@ class Test extends Testcase {
 		);
 	}
 
-	public function testBackwardToSouth() {
+	public function testBackwardSinceTheSouth() {
 		$rover = new Rover(0, 0, 'S');
 		$rover->backward();
 		$this->assertEquals(
@@ -77,7 +77,7 @@ class Test extends Testcase {
 		);
 	}
 
-	public function testBackwardToWest() {
+	public function testBackwardSinceTheWest() {
 		$rover = new Rover(0, 0, 'W');
 		$rover->backward();
 		$this->assertEquals(
