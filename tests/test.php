@@ -14,20 +14,29 @@ class Test extends Testcase {
 			);
 	}
 
-	public function testForward() {
-		$rover = new Rover(0,0,'W');
+	public function testForwardToWest() {
+		$rover = new Rover(0, 0,'W');
 		$rover->forward();
 		$this->assertEquals(
 			[-1, 0,'W'],
 			$rover->getPosition()
 			);
-	}	
+	}
+
+	public function testForwardToNorth() {
+		$rover = new Rover(0, 0,'N');
+		$rover->forward();
+		$this->assertEquals(
+			[0, 1,'N'],
+			$rover->getPosition()
+			);
+	}
 	
 	public function testBackward() {
-		$rover = new Rover(0,0,'E');
+		$rover = new Rover(0, 0,'E');
 		$rover->backward();
 		$this->assertEquals(
-			[0,-1,'E'],
+			[-1, 0,'E'],
 			$rover->getPosition()
 			);
 	}
@@ -38,7 +47,7 @@ class Test extends Testcase {
 		$this->assertEquals(
 			[0, 0, 'N'],
 			$rover->getPosition()
-		);
+			);
 	}
 
 	public function testRoverMovesForwardTwiceAndTurnOnTheRight() {
@@ -49,6 +58,8 @@ class Test extends Testcase {
 		$this->assertEquals( 
 			[0, 2, 'E'],
 			$rover->getPosition()
-		);
+			);
 	}
+
+	
 }
