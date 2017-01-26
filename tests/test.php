@@ -68,6 +68,15 @@ class Test extends Testcase {
 		);
 	}
 
+	public function testBackwardToSouth() {
+		$rover = new Rover(0, 0, 'S');
+		$rover->backward();
+		$this->assertEquals(
+			[0, 1, 'S'],
+			$rover->getPosition()
+		);
+	}
+
 	public function testRight() {
 		$rover = new Rover (0, 0, 'W');
 		$rover->right();
