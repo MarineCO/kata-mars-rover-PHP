@@ -55,6 +55,18 @@
         }
     }
 
-    
+    public function right() {
+        if ($this->orientation === 'N') {
+            $this->orientation = 'E';
+        } elseif ($this->orientation === 'E') {
+            $this->orientation = 'S';
+        } elseif ($this->orientation === 'S') {
+            $this->orientation = 'W';
+        } elseif ($this->orientation === 'W') {
+            $this->orientation = 'N';
+        }
+    }
+
+
 }
  

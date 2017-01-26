@@ -30,6 +30,14 @@ class Test extends Testcase {
 			[0,-1,'E'],
 			$rover->getPosition()
 			);
+	}
 
+	public function testRight() {
+		$rover = new Rover (0, 0, 'W');
+		$rover->right();
+		$this->assertEquals(
+			[0, 0, 'N'],
+			$rover->getPosition()
+		);
 	}
 }
