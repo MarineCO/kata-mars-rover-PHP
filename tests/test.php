@@ -11,7 +11,17 @@ class Test extends Testcase {
 		$this->assertEquals(
 			[0, 0, 'N'],
 			$rover->getPosition()
-		);
+			);
 	}
+
+	public function testForward() {
+		$rover = new Rover(0,0,'W');
+		$rover->forward();
+		$this->assertEquals(
+			[-1, 0,'W'],
+			$rover->getPosition()
+			);
+	}	
+	
 
 }
