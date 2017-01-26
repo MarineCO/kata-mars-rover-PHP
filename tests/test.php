@@ -50,13 +50,22 @@ class Test extends Testcase {
 			);
 	}
 	
-	public function testBackward() {
-		$rover = new Rover(0, 0,'E');
+	public function testBackwardToNorth() {
+		$rover = new Rover(0, 0,'N');
 		$rover->backward();
 		$this->assertEquals(
-			[-1, 0,'E'],
+			[0, -1,'N'],
 			$rover->getPosition()
 			);
+	}
+
+	public function testBackwardToEast() {
+		$rover = new Rover(0, 0, 'E');
+		$rover->backward();
+		$this->assertEquals(
+			[-1, 0, 'E'],
+			$rover->getPosition()
+		);
 	}
 
 	public function testRight() {
