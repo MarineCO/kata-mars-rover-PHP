@@ -23,5 +23,13 @@ class Test extends Testcase {
 			);
 	}	
 	
+	public function testBackward() {
+		$rover = new Rover(0,0,'E');
+		$rover->backward();
+		$this->assertEquals(
+			[0,-1,'E'],
+			$rover->getPosition()
+			);
 
+	}
 }
