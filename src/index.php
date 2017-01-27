@@ -65,19 +65,19 @@
         $this->turn(true);
     }
 
-    public function turn($bool) {
+    public function turn($left) {
 
         $position = array_search($this->orientation, $this->array);
         $posLeft = $position - 1;
         $posRight = $position + 1;
 
-        if ($bool === false) {
+        if ($left === false) {
             if (isset($this->array[$posRight])) {
                 $this->orientation = $this->array[$posRight];
             } else {
                 $this->orientation = $this->array[0];
             }
-        } elseif ($bool === true) {
+        } elseif ($left === true) {
              if (isset($this->array[$posLeft])) {
                 $this->orientation = $this->array[$posLeft];
             } else {
