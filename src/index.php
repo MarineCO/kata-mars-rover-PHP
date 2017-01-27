@@ -1,13 +1,13 @@
 <?php
 
 
- class Rover {
+class Rover {
 
     private $x = [0, 1, 0, -1];
     private $y = [1, 0, -1, 0];
     private $orientation;
     private $array = ['N', 'E', 'S', 'W'];
-  
+
     public function __construct($x, $y, $orientation) {
         $this->x = $x;
         $this->y = $y;
@@ -16,9 +16,9 @@
 
     public function getPosition() {
         return [
-            $this->x,
-            $this->y,
-            $this->orientation
+        $this->x,
+        $this->y,
+        $this->orientation
         ];
     }
 
@@ -42,16 +42,16 @@
     public function backward() {
         if($this->orientation === 'N'){
             [$this->x = $this->x,
-             $this->y = $this->y - 1];
+            $this->y = $this->y - 1];
         }elseif($this->orientation === 'S'){
             [$this->x = $this->x,
-             $this->y = $this->y + 1];
+            $this->y = $this->y + 1];
         }elseif($this->orientation === 'W'){
             [$this->x = $this->x + 1,
-             $this->y = $this->y];
+            $this->y = $this->y];
         }elseif($this->orientation === 'E'){
             [$this->x = $this->x - 1,
-             $this->y = $this->y];
+            $this->y = $this->y];
         }
     }
 
@@ -72,18 +72,12 @@
         $posRight = $position + 1;
 
         if ($left === false) {
-            if (isset($this->array[$posRight])) {
-                $this->orientation = $this->array[$posRight];
-            } else {
-                $this->orientation = $this->array[0];
-            }
+            $this->orientation = isset($this->array[$posRight]) ? $this->array[$posRight] : $this->array[0]; 
+
         } elseif ($left === true) {
-             if (isset($this->array[$posLeft])) {
-                $this->orientation = $this->array[$posLeft];
-            } else {
-                $this->orientation = $this->array[3];
-            }
-        }
-    }
+            $this->orientation = isset($this->array[$posLeft]) ? $this->array[$posLeft] : $this->array[3];
+
+     }
+ }
 }
- 
+
