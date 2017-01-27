@@ -57,25 +57,33 @@
 
     public function right() {
 
-        $position = array_search($this->orientation, $this->array);
-        $newPosition = $position + 1;
-        if (isset($this->array[$newPosition])) {
-            $this->orientation = $this->array[$newPosition];
-        } else {
-            $this->orientation = $this->array[0];
-        }
+        $this->turn(false);
     }
 
     public function left() {
 
-        $position = array_search($this->orientation, $this->array);
-        $newPosition = $position - 1;
-        if (isset($this->array[$newPosition])) {
-            $this->orientation = $this->array[$newPosition];
-        } else {
-            $this->orientation = $this->array[3];
-        }
+        $this->turn(true);
+    }
 
+    public function turn($bool) {
+
+        $position = array_search($this->orientation, $this->array);
+        $posLeft = $position - 1;
+        $posRight = $position + 1;
+
+        if ($bool === false) {
+            if (isset($this->array[$posRight])) {
+                $this->orientation = $this->array[$posRight];
+            } else {
+                $this->orientation = $this->array[0];
+            }
+        } elseif ($bool === true) {
+             if (isset($this->array[$posLeft])) {
+                $this->orientation = $this->array[$posLeft];
+            } else {
+                $this->orientation = $this->array[3];
+            }
+        }
     }
 }
  
