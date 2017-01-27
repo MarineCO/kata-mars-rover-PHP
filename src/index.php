@@ -3,9 +3,10 @@
 
  class Rover {
 
-    private $x;
-    private $y;
+    private $x = [0, 1, 0, -1];
+    private $y = [1, 0, -1, 0];
     private $orientation;
+    private $array = ['N', 'E', 'S', 'W'];
   
     public function __construct($x, $y, $orientation) {
         $this->x = $x;
@@ -15,9 +16,9 @@
 
     public function getPosition() {
         return [
-        $this->x,
-        $this->y,
-        $this->orientation
+            $this->x,
+            $this->y,
+            $this->orientation
         ];
     }
 
@@ -37,6 +38,7 @@
         }
     }
 
+
     public function backward() {
         if($this->orientation === 'N'){
             [$this->x = $this->x,
@@ -54,27 +56,26 @@
     }
 
     public function right() {
-        if ($this->orientation === 'N') {
-            $this->orientation = 'E';
-        } elseif ($this->orientation === 'E') {
-            $this->orientation = 'S';
-        } elseif ($this->orientation === 'S') {
-            $this->orientation = 'W';
-        } elseif ($this->orientation === 'W') {
-            $this->orientation = 'N';
+
+        $position = array_search($this->orientation, $this->array);
+        $newPosition = $position + 1;
+        if (isset($this->array[$newPosition])) {
+            $this->orientation = $this->array[$newPosition];
+        } else {
+            $this->orientation = $this->array[0];
         }
     }
 
     public function left() {
-        if ($this->orientation === 'N') {
-            $this->orientation = 'W';
-        } elseif ($this->orientation === 'W') {
-            $this->orientation = 'S';
-        } elseif ($this->orientation === 'S') {
-            $this->orientation = 'E';
-        } elseif ($this->orientation === 'E') {
-            $this->orientation = 'N';
+
+        $position = array_search($this->orientation, $this->array);
+        $newPosition = $position - 1;
+        if (isset($this->array[$newPosition])) {
+            $this->orientation = $this->array[$newPosition];
+        } else {
+            $this->orientation = $this->array[3];
         }
+
     }
 }
  
